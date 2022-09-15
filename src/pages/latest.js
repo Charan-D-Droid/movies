@@ -18,7 +18,9 @@ const Movies = () => {
   return (
     <div>
       <span className="pageTitle">Latest</span>
-      <div className="latest">{content && content.map((c) => <Content />)}</div>
+      <div className="latest">
+        {content && content.map((c) => console.log(c))}
+      </div>
     </div>
   );
 };

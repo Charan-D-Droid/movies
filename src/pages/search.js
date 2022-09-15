@@ -5,7 +5,6 @@ import axios from "axios";
 import Card from "/components/card";
 
 const Search = () => {
-  const [type, setType] = useState(0);
   const [searchText, setSearchText] = useState("");
   const [content, setContent] = useState();
 
@@ -13,14 +12,14 @@ const Search = () => {
     const { data } = await axios.get(
       `https://api.tvmaze.com/search/shows?q=${searchText}}`
     );
-
     setContent(data.results);
+    console.log(data);
   };
 
-  // useEffect() => {
-  //   window.scroll(0, 0);
-  //   fetch();
-  // },[page];
+  useEffect(() => {
+    fetch();
+  });
+
   return (
     <div className="search">
       <TextField
@@ -30,6 +29,7 @@ const Search = () => {
         variant="filled"
         onChange={(e) => setSearchText(e.target.value)}
       />
+      <div>{content && content.map((c) => <card id={c.show.id} />)}</div>
     </div>
   );
 };

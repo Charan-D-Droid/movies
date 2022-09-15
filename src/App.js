@@ -8,6 +8,11 @@ import Latest from "./pages/latest";
 function App() {
   return (
     // <BrowserRouter>
+    //   <div>
+    //     <Search />
+    //     <Latest />
+    //     <SimpleBottomNavigation />
+    //   </div>
     //   <div className="app">
     //     <Container>
     //       <Switch>
@@ -18,8 +23,8 @@ function App() {
     //   </div>
     // </BrowserRouter>
     <div>
-      {/* <Search /> */}
-      <Latest />
+      <Search />
+      {/* <Latest /> */}
       <SimpleBottomNavigation />
     </div>
   );
